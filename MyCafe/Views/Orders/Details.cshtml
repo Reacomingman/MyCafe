@@ -1,0 +1,47 @@
+﻿@model MyCafe_v1._5.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Operation.cshtml";
+}
+
+
+    <div class="content-wrapper">
+        <h2>Details</h2>
+
+        <div>
+            <h4>Order</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreateTime)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreateTime)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProcessTime)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProcessTime)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Employee.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Employee.FirstName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index") |
+            @Html.ActionLink("Order details", "Index","Order_Detail")
+        </p>
+        </div>

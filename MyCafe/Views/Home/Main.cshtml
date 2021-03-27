@@ -1,0 +1,90 @@
+﻿@model MyCafe_v1._5.Models.Employee
+
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/Operation.cshtml";
+}
+
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="m-0">Account Management</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Create/ Edit/ Delete/ the accounts</h6>
+                                <br>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h5 class="m-0">Employee Management</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Create/ Edit/ Delete/ the employee profiles</h6>
+                                <br>
+                                @Html.ActionLink("All Employees", "Index", "Employees", new { area = "" }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h5 class="m-0">Live Chat</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Chat with online colleagues</h6>
+                                <br>
+                                @Html.ActionLink("Join", "Index", "Innovative", new { area = "" }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.col-md-6 -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="m-0">Menu Management</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Create/ Edit/ Delete/ the menu</h6>
+                                <br>
+                                @Html.ActionLink("View Menus", "Index", "Menus", new { area = "" }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h5 class="m-0">Order Management</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Create/ Edit/ Delete/ the orders</h6>
+                                <br>
+                                @Html.ActionLink("View Orders", "Index", "Orders", new { area = "" }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h5 class="m-0">Email Services</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-title">Send email to customers</h6>
+                                <br>
+                                @Html.ActionLink("Send Email", "Send_Email", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-md-6 -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+

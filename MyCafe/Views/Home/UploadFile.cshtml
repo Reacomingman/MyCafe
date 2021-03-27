@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "UploadFile";
+    Layout = "~/Views/Shared/Operation.cshtml";
+}
+
+<div class="content-wrapper">
+    <h2>UploadFile</h2>
+
+    <form action='@Url.Action("UploadFile", "Home")' method="post" enctype="multipart/form-data">
+        <input type="file" name="file" value="FilePath"/>
+        <input type="submit" value="add an attachment" />
+        @Html.ActionLink("Back to Email", "Send_Email", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+    </form>
+    @ViewBag.Message
+
+</div>

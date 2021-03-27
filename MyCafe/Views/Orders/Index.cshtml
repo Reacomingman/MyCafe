@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MyCafe_v1._5.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Operation.cshtml";
+}
+
+    <div class="content-wrapper">
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProcessTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employee.FirstName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProcessTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employee.FirstName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>

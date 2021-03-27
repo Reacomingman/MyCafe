@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link href="~/Content/AdminLTE/all.min.css" rel="stylesheet" />
+    <link href="~/Content/AdminLTE/adminlte.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/Customisation/Pagination.js"></script>
+    <style>
+       .no-bullets {
+        list-style-type: none;
+        }
+    </style>
+
+</head>
+
+
+<body class="hold-transition sidebar-mini" style="padding:0;margin:0;">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul>
+                <li class="nav-item no-bullets">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="navbar-toggler-icon"></i></a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off    </a></li>
+                    }
+
+                }
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">User Name</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                        with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Starter Pages
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="@Url.Action("Main", "Home")" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>My Page</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>My Profile</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <div>
+            @RenderBody()
+        </div>
+
+    </div>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/AdminLTE/adminlte.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
